@@ -5,7 +5,7 @@ $password = "";
 $dbname = "testphp";
 $conn = mysqli_connect($host, $username, $password, $dbname);
 
-$name=$_POST["name"];
+
 $email=$_POST["email"];
 $password=$_POST["password"];
 
