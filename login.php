@@ -10,7 +10,7 @@
     
     
     <body>
-        <h1>Plese log in</h1>
+        <h1>Please log in</h1>
         <form method="post" action="loginprocess.php" >
         
             <input type="text" name="email" placeholder="enter email">
