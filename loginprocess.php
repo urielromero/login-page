@@ -38,6 +38,12 @@ $result = mysqli_query ($conn, "SELECT * FROM testtable2");
     				</SCRIPT>");
         	}
 
+                
+
     	}
+
+        echo("<SCRIPT LANGUAGE='JavaScript'>
+                window.alert('Verify your email or password is correct');
+                window.location.href='login.php'; </SCRIPT>");
 
  ?>
