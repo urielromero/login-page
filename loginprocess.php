@@ -1,4 +1,7 @@
 <?php
+
+    session_start();
+    
 $host = "localhost";
 $username = "root";
 $password = "";
@@ -8,7 +11,6 @@ $conn = mysqli_connect($host, $username, $password, $dbname);
 
 $email=$_POST["email"];
 $password=$_POST["password"];
-
 
 
 
@@ -29,7 +31,9 @@ $result = mysqli_query ($conn, "SELECT * FROM testtable2");
         		// echo "Welcome ";
         		// echo $row['name'];
 
-        		session_start();
+                    //create new table name var iable
+                    $_SESSION['mynewtable'] = $row['name'].$row['email'];
+        	
  					$_SESSION['user']=$row['name'];
 
 				 	echo ("<SCRIPT LANGUAGE='JavaScript'>

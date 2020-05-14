@@ -1,4 +1,6 @@
+
 <?php
+session_start();
 
 $host="localhost";
 $username="root";
@@ -14,6 +16,12 @@ $password=$_POST["password"];
 $cpassword=$_POST["cpassword"];
 
 
+//table name per user
+$mytodolist=$name.$email;
+$_SESSION['mytable']= $mytodolist;
+
+
+
 
 //verify password mactches 
 if($cpassword == $password){
@@ -21,10 +29,24 @@ if($cpassword == $password){
 		$sql = "INSERT INTO testtable2 (id, name, email, password) VALUES (NULL, '$name', '$email', '$password');";
 
 
+		$conn->query($sql);
+
 //send query not needed as it's included in if/else smt.
 //$conn->query($sql);
 
- 		if ($conn->query($sql) == TRUE) {
+
+
+
+
+			// sql to create table
+			$sql2 = "CREATE TABLE `$mytodolist` (
+			id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+			title VARCHAR(100) NOT NULL,
+			description VARCHAR(100) NOT NULL
+			)";
+
+
+ 		if ($conn->query($sql2) == TRUE) {
 
 
  			echo("<SCRIPT LANGUAGE='JavaScript'>

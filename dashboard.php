@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+
  if(!isset($_SESSION['user']))
  {
   echo ("<SCRIPT LANGUAGE='JavaScript'>
@@ -20,6 +21,13 @@ session_start();
 
 
 <?php 
+// echo 'db name: ';
+// echo $_SESSION['mytable'];
+
+$mytodolist=$_SESSION['mynewtable'];
+
+$_SESSION['mynewtable2']=$mytodolist;
+
 
 $host="localhost";
 $username="root";
@@ -27,10 +35,11 @@ $password="";
 $dbname="testphp";
 
 
+
 $conn = new mysqli($host, $username, $password, $dbname);
 
 
-	$result=mysqli_query($conn, "SELECT * FROM `$newdb`");
+	$result=mysqli_query($conn, "SELECT * FROM `$mytodolist`");
 
 	while($row=mysqli_fetch_assoc($result)){
 

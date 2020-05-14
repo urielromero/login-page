@@ -1,5 +1,8 @@
 <?php 
 
+session_start();
+
+
 $host="localhost";
 $username="root";
 $password="";
@@ -11,7 +14,16 @@ $title = $_POST["title"];
 $description = $_POST["description"];
 
 
-$sql = "INSERT INTO `$newdb` (id, title, description) VALUES (NULL, '$title', '$description');";
+// $test="user";
+// $test2="name";
+// $table=$test.$test2;
+
+
+
+$mytodolist=$_SESSION['mynewtable2'];
+
+
+$sql = "INSERT INTO `$mytodolist` (id, title, description) VALUES (NULL, '$title', '$description');";
 
 
 	if($conn->query($sql)){
