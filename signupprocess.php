@@ -50,7 +50,7 @@ if($cpassword == $password){
 
 
  			echo("<SCRIPT LANGUAGE='JavaScript'>
- 				window.alert('Registration Successfully');
+ 				window.alert('Registration Successful');
  				window.location.href='login.php';
  				</SCRIPT>");
  		}else{
