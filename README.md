@@ -14,3 +14,4 @@ When logged in, you can view and add new tasks.
 
 I will be adding functionality to delete items in the future to comply with CRUD appication guidelines. 
 
+Please see inlcuded photos for a visual of application. 
